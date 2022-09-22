@@ -12,7 +12,9 @@ public abstract class Sprite {
 
     public void draw(Graphics g){
         //畫小精靈
-        img.paintIcon(null,g,absolutePosition.x,absolutePosition.y);
+        if(relativePosition!=null){//因為把小精靈殺死後會為空,就沒辦法做paintIcon
+            img.paintIcon(null,g,absolutePosition.x,absolutePosition.y);
+        }
     }
 
     public void setPosition(Point p){
